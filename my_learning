@@ -1,0 +1,47 @@
+class Student:
+    def __init__(self,fname,home,power):
+              
+              self.name = fname
+              self._home = home
+              self.power= power
+    def __str__(self):
+        return f'{self.name} from {self.home} and there power is {self.power}'
+    def charm(self):
+        match self.power:
+                case 'stag':
+                      return  ':)'
+                case 'outter':
+                        return ':('
+                case _:
+                        return '::)'
+    @property
+    def home(self):
+           return self._home
+    
+    @home.setter
+    def home(self,home):
+           if home not in['bk','queens','portland']:
+                  raise ValueError('invalid option')
+           self._home =home
+           
+
+
+def main():
+    student = get_student()
+    student._home ='number four'
+    print('Use this power:')
+    print(student.charm())
+    print(student)
+
+
+def get_student():
+    
+        name =input('name:')
+        home =input('home:')
+        power= input('what is your power?')
+        return Student(name,home,power)
+
+
+if __name__ == main():
+                main()
+
