@@ -1,0 +1,23 @@
+class vault:
+    def __init__(self,dollers=0,cents=0,qtr=0):
+        self.dollers= dollers
+        self.cents =cents
+        self.qtr =qtr
+    def __str__(self):
+        return f'{self.dollers} dollers , {self.cents} cents,{self.qtr} qtrs'
+    def __add__(self,other):
+        dollers =self.dollers+other.dollers
+        cents =self.cents+other.cents
+        qtrs =self.qtr+other.qtr
+        return vault(dollers,cents,qtrs)
+potter =vault(11,11,34)
+print(potter)
+
+wez=vault(33,46,34)
+print(wez)
+
+total= potter + wez
+
+print(total)
+        
+        
